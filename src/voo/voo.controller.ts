@@ -8,7 +8,7 @@ export class VooController {
 
   @Get()
   async getVoos(@Query() params: any): Promise<any> {
-    console.log(params.datereturn)
+    
     const go = await this.vooService.findVoos(params.date, params.start, params.destiny)
     const back = await this.vooService.findVoos(params.datereturn, params.destiny, params.start)
     return [...go,...back];
