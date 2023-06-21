@@ -7,9 +7,10 @@ import { AirlineModule } from './airline/airline.module';
 import { PilotModule } from './pilot/pilot.module';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { ReserveModule } from './reservations/reserve.module';
 
 @Module({
-  imports: [VooModule, PlaneModule, AirlineModule, PilotModule, AuthModule, UserModule],
+  imports: [VooModule, PlaneModule, AirlineModule, PilotModule, AuthModule, UserModule, ReserveModule],
   controllers: [AppController],
   providers: [AppService],
 })

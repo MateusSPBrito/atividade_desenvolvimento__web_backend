@@ -10,11 +10,11 @@ export class VooService {
     ) { }
 
     async findVoos(date: any, start: any, destiny: any): Promise<Voo[]> {
-        if(!date) return
+        if (!date) return []
         return this.vooRepository.query(`
         SELECT v.id AS id, v.start AS start,  v.startAirport AS startAirport, 
         v.destiny AS destiny, v.destinyAirport AS destinyAirport, v.date AS date, 
-        v.time AS time, p.model AS plane, a.name AS airline, pl.name AS pilot
+        v.time AS time, p.model AS plane, a.name AS airline, pl.name AS pilot, v.price AS price
 
         FROM voo AS v, plane AS p, airline AS a, pilot AS pl
         
@@ -22,4 +22,9 @@ export class VooService {
         v.destiny = '${destiny}' AND v.plane = p.id AND v.airline = a.id AND v.pilot = pl.id;
         `)
     }
+
+
+    // getByUserId(id: any) {
+    //     return this.vooRepository.query(`SELECT * FROM voo WHERE airline = ${id}`)
+    // }
 }
