@@ -7,7 +7,7 @@ export class AirlineController {
   constructor(private readonly airlineService: AirlineService) {}
 
   @Get()
-  getHello(): Promise<Airline[]> {
+  findAll(): Promise<Airline[]> {
     return this.airlineService.findAll();
   }
 }

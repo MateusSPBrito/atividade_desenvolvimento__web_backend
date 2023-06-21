@@ -7,7 +7,7 @@ export class PlaneController {
   constructor(private readonly planeService: PlaneService) {}
 
   @Get()
-  getHello(): Promise<Plane[]> {
+  findAll(): Promise<Plane[]> {
     return this.planeService.findAll();
   }
 }
