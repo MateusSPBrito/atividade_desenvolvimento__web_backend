@@ -22,9 +22,4 @@ export class VooService {
         v.destiny = '${destiny}' AND v.plane = p.id AND v.airline = a.id AND v.pilot = pl.id;
         `)
     }
-
-
-    // getByUserId(id: any) {
-    //     return this.vooRepository.query(`SELECT * FROM voo WHERE airline = ${id}`)
-    // }
 }

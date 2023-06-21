@@ -16,4 +16,9 @@ export class ReserveController {
     async creatUser(@Body() data: NewReserve): Promise<any> {
         return this.reserveService.newReserve(data)
     }
+
+    @Get('/my-reservations/:id')
+    getReservedByUser(@Param('id') id: any): Promise<any[]> {
+        return this.reserveService.getReservedByUser(id)
+    }
 }

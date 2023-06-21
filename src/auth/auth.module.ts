@@ -15,7 +15,7 @@ import { TokenModule } from 'src/token/token.module';
         PassportModule,
         JwtModule.register({
             secret: jwtConstants.secret,
-            signOptions: { expiresIn: '30s' },
+            signOptions: { expiresIn: '7200s' },
         }),
         TokenModule,
     ],
